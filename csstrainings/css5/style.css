@@ -1,0 +1,89 @@
+/* General setup */
+
+* {
+    box-sizing: border-box;
+  }
+  
+body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+}
+  
+/* Layout */
+  
+section {
+    float: left;
+    width: 50%;
+}
+  
+aside {
+    float: left;
+    width: 30%;
+}
+  
+nav {
+    float: left;
+    width: 20%;
+}
+  
+footer {
+    clear: both;
+}
+  
+header, section, aside, nav, footer {
+    padding: 20px;
+}
+  
+/* header and footer */
+
+header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+}
+  
+/* WRITE YOUR CODE BELOW HERE */
+.navigation li {
+    
+    border: 2px solid #AA6666;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    list-style-type: none;
+}
+
+.navigation > ul > li > a {
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.2em;
+}
+
+a {
+    color: #AA6666;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+section {
+    font-size: 1.2em;
+}
+
+#nextSteps {
+    list-style-type: upper-roman;
+}
+
+aside > ul > li > a {
+    font-style: bold;
+    font-size: 1.2em;    
+}
