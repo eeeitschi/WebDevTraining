@@ -1,0 +1,9 @@
+source: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance
+
+The amount of specificity a selector has is measured using four different values (or components), which can be thought of as thousands, hundreds, tens, and ones — four single digits in four columns:
+
+Thousands: Score one in this column if the declaration is inside a style attribute, aka inline styles. Such declarations don't have selectors, so their specificity is always 1000.
+Hundreds: Score one in this column for each ID selector contained inside the overall selector.
+Tens: Score one in this column for each class selector, attribute selector, or pseudo-class contained inside the overall selector.
+Ones: Score one in this column for each element selector or pseudo-element contained inside the overall selector.
+
