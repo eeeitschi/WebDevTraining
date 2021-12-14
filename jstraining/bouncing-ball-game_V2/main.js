@@ -1,6 +1,7 @@
 let balls = [];
 let ballCount = 0;
 let evilCircle;
+let requestId;
 
 // setup canvas
 const canvas = document.querySelector('canvas');
@@ -9,7 +10,10 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
-const test = document.querySelector("#ballCount");  
+const ballCountHUD = document.querySelector("#ballCount");  
+const gameBtn = document.querySelector('button')
+
+gameBtn.addEventListener('click', gameStartUp);
 
 // function to generate random number
 function random(min, max) {
@@ -174,17 +178,23 @@ function loop() {
   evilCircle.draw();
   evilCircle.checkBounds();
   evilCircle.collisionDetect();
-  test.innerText = "Ball Count: " + ballCount;
-  requestAnimationFrame(loop);
+  ballCountHUD.innerText = "Ball Count: " + ballCount;
+  requestId = requestAnimationFrame(loop);
+  if(ballCount === 0) {
+    gameFinished();
+  }
 }
 
-
 function gameStartUp() {
-  ballCount = 0;
   fillWithBalls();
   evilCircle = new EvilCircle(width / 2, height / 2);
   evilCircle.setControls();
   loop();
 }
 
-gameStartUp();
+function gameFinished() {
+  balls = [];
+  ballCount = 0;
+  evilCircle = null;
+  cancelAnimationFrame(requestId);
+}
